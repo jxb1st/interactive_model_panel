@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "slug": "glimmer_qwen_streaming_baseline",
+    "title": "Sliding-Window Streaming VLM Smoke Test — Qwen3.8-27B vs Muse Glimmer 30B",
+    "short_name": "SW",
+    "date": "2026-10-05",
+    "status": "completed",
+    "summary": "Two offline VLMs wrapped as causal online assistants (8-frame sliding visual window + self-generated recurrent text memory, media-time replay) on five randomly sampled items from each of Ego-MC-Bench, Wearable AI, StreamingBench, OVO-Bench and ProactiveVideoQA. All 50 trajectories ran end to end; official or adapted scores where no LLM judge is needed.",
+    "stats": [
+      "5 benchmarks",
+      "25 items",
+      "2 models",
+      "5,578 calls"
+    ],
+    "tags": [
+      "video",
+      "streaming",
+      "interaction",
+      "recurrent memory"
+    ]
+  }
+]
