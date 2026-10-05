@@ -49,12 +49,13 @@ Entries missing `slug` or `title` are skipped with a console warning. Cards are 
 2. Create the repository and copy the template into it:
    ```bash
    gh repo create jxb1st/turn-taking-eval --public --clone
-   cp -r experiment-template/* turn-taking-eval/
+   cp -r experiment-template/. turn-taking-eval/
+   git -C turn-taking-eval branch -M main      # fresh clones start on "master"; Pages needs "main"
    ```
 3. Fill in `index.html` (delete sections that do not apply), put figures and compressed clips in `assets/`.
 4. Commit, push, and enable Pages on that repository (branch `main`, folder `/`):
    ```bash
-   gh api -X POST repos/jxb1st/turn-taking-eval/pages -f 'source[branch]=main' -f 'source[path]=/'
+   gh api -X POST repos/jxb1st/turn-taking-eval/pages --input - <<< '{"source":{"branch":"main","path":"/"}}'
    ```
 5. Append an entry with `"slug": "turn-taking-eval"` to `experiments.json` here, commit, push.
    The card appears on the panel and links to `https://jxb1st.github.io/turn-taking-eval/`.
