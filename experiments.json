@@ -1,43 +1,44 @@
 [
- {
-  "slug": "glimmer_qwen_streaming_baseline",
-  "title": "Sliding-Window Streaming VLM Smoke Test — Qwen3.8-27B vs Muse Glimmer 30B",
-  "short_name": "SW",
-  "date": "2026-10-05",
-  "status": "completed",
-  "summary": "Two offline VLMs wrapped as causal online assistants (8-frame sliding visual window + self-generated recurrent text memory, media-time replay) on five randomly sampled items from each of Ego-MC-Bench, Wearable AI, StreamingBench, OVO-Bench and ProactiveVideoQA. All 50 trajectories ran end to end; official or adapted scores where no LLM judge is needed.",
-  "stats": [
-   "5 benchmarks",
-   "25 items",
-   "2 models",
-   "5,578 calls"
-  ],
-  "tags": [
-   "video",
-   "streaming",
-   "interaction",
-   "recurrent memory"
-  ]
- },
- {
-  "slug": "human_device_simulation",
-  "title": "Human–Device Simulation — a rigged human operating a microwave and a desktop printer (3D render + MuJoCo contact)",
-  "short_name": "HD",
-  "date": "2026-10-06",
-  "status": "in-progress",
-  "summary": "Reproducible 3D pipeline: a clothed MPFB human with IK-driven hands operates a CC BY 4.0 microwave model and a generic desktop printer in Blender; each device's key (microwave START, printer OK) is driven by MuJoCo contact against a kinematic fingertip proxy with a negative control; door, knob, bowl, paper tray and paper stack use labelled assisted grasps; the turntable, interior light, display and printed sheet are labelled motor or illustrative effects. Two recorded runs (microwave 51 s, printer 35 s) rendered from external, first-person and hand-detail cameras (preview quality).",
-  "stats": [
-   "6 videos",
-   "51 s + 35 s",
-   "2 contact tests"
-  ],
-  "tags": [
-   "3D",
-   "simulation",
-   "Blender",
-   "MuJoCo",
-   "human-device"
-  ],
-  "demo": true
- }
+  {
+    "slug": "glimmer_qwen_streaming_baseline",
+    "title": "Sliding-Window Streaming VLM Smoke Test — Qwen3.8-27B vs Muse Glimmer 30B",
+    "short_name": "SW",
+    "date": "2026-10-05",
+    "status": "completed",
+    "summary": "Two offline VLMs wrapped as causal online assistants (8-frame sliding visual window + self-generated recurrent text memory, media-time replay) on five randomly sampled items from each of Ego-MC-Bench, Wearable AI, StreamingBench, OVO-Bench and ProactiveVideoQA. All 50 trajectories ran end to end; official or adapted scores where no LLM judge is needed.",
+    "stats": [
+      "5 benchmarks",
+      "25 items",
+      "2 models",
+      "5,578 calls"
+    ],
+    "tags": [
+      "video",
+      "streaming",
+      "interaction",
+      "recurrent memory"
+    ]
+  },
+  {
+    "slug": "human_device_simulation",
+    "title": "Human–Device Simulation — a rigged human operating a microwave and a desktop printer (3D render + MuJoCo contact)",
+    "short_name": "HD",
+    "date": "2026-10-06",
+    "status": "in-progress",
+    "summary": "Reproducible 3D pipeline: a clothed MPFB human with IK-driven hands operates a CC BY 4.0 microwave model and a generic desktop printer in Blender; each device's key (microwave START, printer OK) is driven by MuJoCo contact against a kinematic fingertip proxy with a negative control; door, knob, bowl, paper tray and paper stack use labelled assisted grasps; the turntable, interior light, display and printed sheet are labelled motor or illustrative effects. Two recorded runs (microwave 51 s, printer 35 s) rendered from external, first-person and hand-detail cameras (preview quality).",
+    "stats": [
+      "6 videos",
+      "51 s + 35 s",
+      "2 contact tests",
+      "contents catalogue"
+    ],
+    "tags": [
+      "3D",
+      "simulation",
+      "Blender",
+      "MuJoCo",
+      "human-device"
+    ],
+    "demo": true
+  }
 ]
