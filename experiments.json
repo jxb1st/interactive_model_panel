@@ -25,12 +25,13 @@
     "short_name": "HD",
     "date": "2026-10-06",
     "status": "in-progress",
-    "summary": "Reproducible 3D pipeline: a clothed MPFB human with IK-driven hands operates a CC BY 4.0 microwave model and a generic desktop printer in Blender; each device's key (microwave START, printer OK) is driven by MuJoCo contact against a kinematic fingertip proxy with a negative control; door, knob, bowl, paper tray and paper stack use labelled assisted grasps; the turntable, interior light, display and printed sheet are labelled motor or illustrative effects. Two recorded runs (microwave 51 s, printer 35 s) rendered from external, first-person and hand-detail cameras (preview quality).",
+    "summary": "Reproducible 3D pipeline: a clothed MPFB human with IK-driven hands operates a CC BY 4.0 microwave model and a generic desktop printer in Blender; each device's key (microwave START, printer OK) is driven by MuJoCo contact against a kinematic fingertip proxy with a negative control; door, knob, bowl, paper tray and paper stack use labelled assisted grasps; the turntable, interior light, display and printed sheet are labelled motor or illustrative effects. Two recorded runs (microwave 51 s, printer 35 s) rendered from external, first-person and hand-detail cameras (preview quality). 2026-10-09: a procedural Samsung-style microwave (21 contact-tested membrane keys, jog dial, hinged door, turntable) replaces the RoboCasa model for new sequences; the old microwave runs stay on the page.",
     "stats": [
       "6 videos",
       "51 s + 35 s",
       "2 contact tests",
-      "contents catalogue"
+      "contents catalogue",
+      "procedural microwave v2"
     ],
     "tags": [
       "3D",
