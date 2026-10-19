@@ -3,9 +3,9 @@
         "slug": "glimmer_qwen_streaming_baseline",
         "title": "Sliding-Window Streaming VLMs: Full Evaluation — Qwen3.8-27B vs Muse Glimmer 30B",
         "short_name": "SW",
-        "date": "2026-10-14",
-        "status": "completed",
-        "summary": "Qwen3.8-27B and Muse Glimmer 30B run as causal online assistants (an 8-frame sliding window plus a memory they write themselves, replayed in media time) on the Wearable AI validation split (all 2,100 sessions, with the official starter-kit protocol and, for EgoProactive, also the Pro2Bench paper protocol) and on Ego-MC-Bench (39 videos) under the Ego-MC-Bench paper's own evaluation protocol and official evaluator. Only the model's view (window plus memory) differs from each benchmark's protocol. An isolated latency study compares both models with and without reasoning.",
+        "date": "2026-10-19",
+        "status": "in progress",
+        "summary": "Qwen3.8-27B and Muse Glimmer 30B run as causal online assistants (an 8-frame sliding window plus a memory they write themselves, replayed in media time) on the Wearable AI validation split (all 2,100 sessions, with the official starter-kit protocol and, for EgoProactive, also the Pro2Bench paper protocol) and on Ego-MC-Bench (39 videos) under the Ego-MC-Bench paper's own evaluation protocol and official evaluator. Only the model's view (window plus memory) differs from each benchmark's protocol. An isolated latency study compares both models with and without reasoning, and Muse on its native serving stack (SGLang + DFlash speculative decoding: 2.3× faster decoding, 3.1 s per call); a Muse accuracy rerun on that stack is in progress.",
         "stats": [
             "2 benchmarks",
             "2,139 items",
