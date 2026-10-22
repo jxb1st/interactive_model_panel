@@ -3,9 +3,9 @@
         "slug": "glimmer_qwen_streaming_baseline",
         "title": "Sliding-Window Streaming VLMs: Full Evaluation — Qwen3.8-27B vs Muse Glimmer 30B",
         "short_name": "SW",
-        "date": "2026-10-19",
+        "date": "2026-10-22",
         "status": "in progress",
-        "summary": "Qwen3.8-27B and Muse Glimmer 30B as causal online assistants (8-frame sliding window + self-written memory) on Ego-MC-Bench and Wearable AI under each benchmark's official protocol, with an isolated latency study that includes Muse on its native serving stack (SGLang + DFlash).",
+        "summary": "Per-call latency, decode speed and per-sample compute of Qwen3.8-27B and Muse Glimmer 30B in an 8-frame sliding-window streaming wrapper, on plain vLLM and on Muse's native serving stack (SGLang + DFlash). Accuracy on Ego-MC-Bench and Wearable AI is on the benchmark pages.",
         "stats": [
             "2 benchmarks",
             "2,139 items",
