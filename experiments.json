@@ -1,70 +1,70 @@
 [
-  {
-    "slug": "glimmer_qwen_streaming_baseline",
-    "title": "Sliding-Window Streaming VLMs: Full Evaluation — Qwen3.8-27B vs Muse Glimmer 30B",
-    "short_name": "SW",
-    "date": "2026-10-19",
-    "status": "in progress",
-    "summary": "Qwen3.8-27B and Muse Glimmer 30B as causal online assistants (8-frame sliding window + self-written memory) on Ego-MC-Bench and Wearable AI under each benchmark's official protocol, with an isolated latency study that includes Muse on its native serving stack (SGLang + DFlash).",
-    "stats": [
-      "2 benchmarks",
-      "2,139 items",
-      "2 models",
-      "official eval protocols"
-    ],
-    "tags": [
-      "video",
-      "streaming",
-      "interaction",
-      "recurrent memory",
-      "latency"
-    ]
-  },
-  {
-    "slug": "human_device_simulation",
-    "title": "Human–Device Simulation — a rigged human operating five household devices from English action sentences (3D render + MuJoCo contact)",
-    "short_name": "HD",
-    "date": "2026-10-22",
-    "status": "in-progress",
-    "summary": "Reproducible 3D pipeline: a clothed MPFB human with IK-driven hands operates a CC BY 4.0 microwave model and a generic desktop printer in Blender; each device's key (microwave START, printer OK) is driven by MuJoCo contact against a kinematic fingertip proxy with a negative control; door, knob, bowl, paper tray and paper stack use labelled assisted grasps; the turntable, interior light, display and printed sheet are labelled motor or illustrative effects. Two recorded runs (microwave 51 s, printer 35 s) rendered from external, first-person and hand-detail cameras (preview quality). 2026-10-11: three procedural devices built from reference videos (Samsung-style microwave with 21 contact keys, Breville-style espresso machine, Frigidaire-style induction range with a touch panel), four tasks each, all rendered from three cameras; the old microwave runs stay on the page. 2026-10-12: induction range rebuilt with 4 knobs and 12 contact-tested keys; every display shows authored per-step states. 2026-10-14: a semantic action layer — parameterized action families with grounded arguments (\"open the microwave door to 37 %\", \"set the knob controlling the rear-right zone to level 7\", \"move the saucepan onto the front zone on my left\") — executed 14 programs of English sentences through the same pipeline; ambiguous or impossible requests are refused with a reason. Later the same day the 14 device tasks themselves were rewritten as sentence programs (\"move the bowl into the microwave\", \"turn the dial to 2:25\", \"set the front-left zone to level 5\", \"move the tamper onto the portafilter\") and re-recorded: 89/89 sentences succeeded, 26/26 key presses activated; no video on the page comes from a hand-written step list any more, and every task block starts with its sentence table (sentence · family · grounded target · normalized · achieved). 2026-10-16: the action space was made model-facing in the style of InteractiveVisualGym — one generated command list per device (the same eight families, each asset exposing only the ones it has, with its own keys, dials, parts, objects and places), a session that takes one command at a time and returns what changed or why it was refused, and five coverage runs that issued every available family of each device once: 49/49 commands accepted and succeeded, 11/11 key presses activated, 15 new videos on the Action space tab. 2026-10-18: the espresso machine became a coffee station — a hopper lid, grind dials, a three-position steam dial, a scale with a TARE key and a lift-out water tank, twelve counter props (bottomless portafilter, tamper, dosing cup, cup, glass, jug, milk carton, water pitcher, ice bucket, scoop, bean bag, knock box) tracked by a substance ledger, and two new families (pour, add); nine coffee programs (bean-to-cup, iced americano, latte, cleanup, espresso, steam milk, program, setup, coverage) were all accepted and re-recorded from three cameras, 12 of the videos new. Later on 2026-10-18 the simulator gained an explicit scene graph (nodes with attributes, typed edges: at, held_by, contains, locked_in), rebuilt after every command, and every task program carries sub-goals as conditions over it, as in InteractiveVisualGym: a milestone must be made true by a command, a terminal condition must hold at the end, and progress is measured from the state alone; 18/18 task programs satisfy their sub-goals, and every task block on the page shows which command satisfied which sub-goal (✓ chips that seek the videos, ◆ on the sentences). 2026-10-19: a Parameter sweeps tab answers \"can the number be specified arbitrarily?\": nine sets keep one family and one sentence template and change only the argument (dial time 0:30 / 1:37 / 2:25 / 7:00, timer knob 0:45 / 3:21 / 8:40, zone level 2 / 5 / 9, oven 350 / 400 / 450 °F, grind dose 8 / 15 / 22 g, pour 50 / 150 / 300 mL, Start pressed once / twice / three times, door 25 / 37 / 60 / 100 %, four places); the 22 new programs were generated from the templates, all accepted, baked and rendered from three cameras (66 new videos), and under each clip the page prints the value and what the command changed in the scene graph (control angle, display text, amount). A range bug surfaced on the way: level 9, the knob's end stop, was refused by a floating-point range check and is now accepted. 2026-10-21: the coffee machine became the exemplar asset — its own action vocabulary of 45 families (35 verbs of the machine's manual plus the generic ten, parsed from a declarative table with a precondition and an effect per family over a contents ledger), a 40-task corpus derived from the manual (15 drinks, 7 preparation, 18 maintenance; 40/40 succeed on the CPU, 232/232 sentences accepted, 81/81 sub-goals), 12 of the tasks rendered from three cameras, continuous effects (fill levels, foam that grows with steam time, a puck that sinks with tamp pressure, lights, a gauge) proven visible from a new effect close-up camera that follows each step's subject (119/119 probes with ≥ 1000 unoccluded subject pixels) and distinct between neighbouring values of 8 coffee sweep sets (24 clips; 14/16 neighbour pairs move ≥ 10 % of the subject's box, the grind-dose dial pair stays at 5 %), the sweeps tab at 15 sets / 48 clips, and the page repository's history squashed to one commit (808 → 460 MB). Later on 2026-10-21 the coffee set was re-cut into 17 minimal primitives, 12 aliases and 27 procedures (one verb, one target, at most one quantity, one effect; the 40 tasks rewritten in primitives: 490 sentences, 81/81 sub-goals, diversity measured), and every primitive got a short clip of its own on the Action space page (17 runs × 3 views, rendered from the sentences alone); the 12 coffee task videos still show the earlier programs until they are re-rendered. 2026-10-22: after a review of the first-person videos (the action was hard to see: the camera held a fixed downward pitch and the body's head turns only 60 % toward what the hands do, so hands and objects sat at the frame's bottom edge or out of it), the first-person camera now tracks the gaze: a per-sample look-at stream built from each step's subject (the key, the dial, the cup being carried, the jug being swirled) drives a look-at target for the eye-level camera (28 mm lens; before the first step it rests on the machine's front; after a step it holds on the result), while the body motion and every recorded trajectory stay byte-identical, so only the first-person view was re-rendered. All 41 coffee runs on the page except the 12 task videos carry it (17 primitive clips, 24 sweep clips); the 12 sweep clips that were \"not recorded yet\" (grind mass, hot water, steam time, tamp pressure) are now baked from their primitive sentences, rendered from three cameras and re-measured (14/16 neighbour pairs above the bar, grind mass measured on first-person end frames because the hand covers the dosing cup in the close-up). Known limit: three primitives (distribute, add, close) lean the body over a low target so the chest hides part of the action.",
-    "stats": [
-      "291 videos",
-      "50/50 tasks done",
-      "97 recorded runs",
-      "5 devices",
-      "17 primitives + 12 aliases",
-      "401 sentences"
-    ],
-    "tags": [
-      "3D",
-      "Blender",
-      "MuJoCo",
-      "action space",
-      "grounding",
-      "human-device",
-      "simulation"
-    ],
-    "demo": true
-  },
-  {
-    "slug": "cctv-decision-model",
-    "title": "CCTV decision model — typed anomaly decisions from frames (Laya-Vision levels 1–3 vs Qwen3.8-27B)",
-    "short_name": "CD",
-    "date": "2026-10-14",
-    "status": "in-progress",
-    "summary": "First pass at the mentor's decision-model proposal on the ETRI CCTV dataset: calibrated typed anomaly decisions (noul + choice) from frames with Laya-Vision (201M), zero-shot on single frames (Level 1) and 4-frame windows (Level 2), fine-tuned on the ETRI temporal ground truth (Level 3), against Qwen3.8-27B answering the same typed questions per frame. Two of five classes so far (abandoned_object, falling; 125 videos). Zero-shot Laya-Vision is at chance (frame AUC 0.51–0.59); 30 minutes of fine-tuning on one MIG slice brings the 1-frame model to AUC 0.73 on 41 test videos, level with Qwen3.8-27B (0.71 on its 12 videos) and ahead of it in event recall at a 1 % false-positive budget (39 % vs 25 %), at 150 ms per decision.",
-    "stats": [
-      "125 videos",
-      "4 runs",
-      "2 classes",
-      "12.9 h footage"
-    ],
-    "tags": [
-      "CCTV",
-      "anomaly detection",
-      "decision model",
-      "Laya-Vision",
-      "ETRI"
-    ]
-  }
+    {
+        "slug": "glimmer_qwen_streaming_baseline",
+        "title": "Sliding-Window Streaming VLMs: Full Evaluation — Qwen3.8-27B vs Muse Glimmer 30B",
+        "short_name": "SW",
+        "date": "2026-10-19",
+        "status": "in progress",
+        "summary": "Qwen3.8-27B and Muse Glimmer 30B as causal online assistants (8-frame sliding window + self-written memory) on Ego-MC-Bench and Wearable AI under each benchmark's official protocol, with an isolated latency study that includes Muse on its native serving stack (SGLang + DFlash).",
+        "stats": [
+            "2 benchmarks",
+            "2,139 items",
+            "2 models",
+            "official eval protocols"
+        ],
+        "tags": [
+            "video",
+            "streaming",
+            "interaction",
+            "recurrent memory",
+            "latency"
+        ]
+    },
+    {
+        "slug": "human_device_simulation",
+        "title": "Human–Device Simulation — a rigged human operating five household devices from English action sentences (3D render + MuJoCo contact)",
+        "short_name": "HD",
+        "date": "2026-10-22",
+        "status": "in-progress",
+        "summary": "Reproducible 3D pipeline: a clothed MPFB human with IK-driven hands operates a CC BY 4.0 microwave model and a generic desktop printer in Blender; each device's key (microwave START, printer OK) is driven by MuJoCo contact against a kinematic fingertip proxy with a negative control; door, knob, bowl, paper tray and paper stack use labelled assisted grasps; the turntable, interior light, display and printed sheet are labelled motor or illustrative effects. Two recorded runs (microwave 51 s, printer 35 s) rendered from external, first-person and hand-detail cameras (preview quality). 2026-10-11: three procedural devices built from reference videos (Samsung-style microwave with 21 contact keys, Breville-style espresso machine, Frigidaire-style induction range with a touch panel), four tasks each, all rendered from three cameras; the old microwave runs stay on the page. 2026-10-12: induction range rebuilt with 4 knobs and 12 contact-tested keys; every display shows authored per-step states. 2026-10-14: a semantic action layer — parameterized action families with grounded arguments (\"open the microwave door to 37 %\", \"set the knob controlling the rear-right zone to level 7\", \"move the saucepan onto the front zone on my left\") — executed 14 programs of English sentences through the same pipeline; ambiguous or impossible requests are refused with a reason. Later the same day the 14 device tasks themselves were rewritten as sentence programs (\"move the bowl into the microwave\", \"turn the dial to 2:25\", \"set the front-left zone to level 5\", \"move the tamper onto the portafilter\") and re-recorded: 89/89 sentences succeeded, 26/26 key presses activated; no video on the page comes from a hand-written step list any more, and every task block starts with its sentence table (sentence · family · grounded target · normalized · achieved). 2026-10-16: the action space was made model-facing in the style of InteractiveVisualGym — one generated command list per device (the same eight families, each asset exposing only the ones it has, with its own keys, dials, parts, objects and places), a session that takes one command at a time and returns what changed or why it was refused, and five coverage runs that issued every available family of each device once: 49/49 commands accepted and succeeded, 11/11 key presses activated, 15 new videos on the Action space tab. 2026-10-18: the espresso machine became a coffee station — a hopper lid, grind dials, a three-position steam dial, a scale with a TARE key and a lift-out water tank, twelve counter props (bottomless portafilter, tamper, dosing cup, cup, glass, jug, milk carton, water pitcher, ice bucket, scoop, bean bag, knock box) tracked by a substance ledger, and two new families (pour, add); nine coffee programs (bean-to-cup, iced americano, latte, cleanup, espresso, steam milk, program, setup, coverage) were all accepted and re-recorded from three cameras, 12 of the videos new. Later on 2026-10-18 the simulator gained an explicit scene graph (nodes with attributes, typed edges: at, held_by, contains, locked_in), rebuilt after every command, and every task program carries sub-goals as conditions over it, as in InteractiveVisualGym: a milestone must be made true by a command, a terminal condition must hold at the end, and progress is measured from the state alone; 18/18 task programs satisfy their sub-goals, and every task block on the page shows which command satisfied which sub-goal (✓ chips that seek the videos, ◆ on the sentences). 2026-10-19: a Parameter sweeps tab answers \"can the number be specified arbitrarily?\": nine sets keep one family and one sentence template and change only the argument (dial time 0:30 / 1:37 / 2:25 / 7:00, timer knob 0:45 / 3:21 / 8:40, zone level 2 / 5 / 9, oven 350 / 400 / 450 °F, grind dose 8 / 15 / 22 g, pour 50 / 150 / 300 mL, Start pressed once / twice / three times, door 25 / 37 / 60 / 100 %, four places); the 22 new programs were generated from the templates, all accepted, baked and rendered from three cameras (66 new videos), and under each clip the page prints the value and what the command changed in the scene graph (control angle, display text, amount). A range bug surfaced on the way: level 9, the knob's end stop, was refused by a floating-point range check and is now accepted. 2026-10-21: the coffee machine became the exemplar asset — its own action vocabulary of 45 families (35 verbs of the machine's manual plus the generic ten, parsed from a declarative table with a precondition and an effect per family over a contents ledger), a 40-task corpus derived from the manual (15 drinks, 7 preparation, 18 maintenance; 40/40 succeed on the CPU, 232/232 sentences accepted, 81/81 sub-goals), 12 of the tasks rendered from three cameras, continuous effects (fill levels, foam that grows with steam time, a puck that sinks with tamp pressure, lights, a gauge) proven visible from a new effect close-up camera that follows each step's subject (119/119 probes with ≥ 1000 unoccluded subject pixels) and distinct between neighbouring values of 8 coffee sweep sets (24 clips; 14/16 neighbour pairs move ≥ 10 % of the subject's box, the grind-dose dial pair stays at 5 %), the sweeps tab at 15 sets / 48 clips, and the page repository's history squashed to one commit (808 → 460 MB). Later on 2026-10-21 the coffee set was re-cut into 17 minimal primitives, 12 aliases and 27 procedures (one verb, one target, at most one quantity, one effect; the 40 tasks rewritten in primitives: 490 sentences, 81/81 sub-goals, diversity measured), and every primitive got a short clip of its own on the Action space page (17 runs × 3 views, rendered from the sentences alone); the 12 coffee task videos still show the earlier programs until they are re-rendered. 2026-10-22: after a review of the first-person videos (the action was hard to see: the camera held a fixed downward pitch and the body's head turns only 60 % toward what the hands do, so hands and objects sat at the frame's bottom edge or out of it), the first-person camera now tracks the gaze: a per-sample look-at stream built from each step's subject (the key, the dial, the cup being carried, the jug being swirled) drives a look-at target for the eye-level camera (28 mm lens; before the first step it rests on the machine's front; after a step it holds on the result), while the body motion and every recorded trajectory stay byte-identical, so only the first-person view was re-rendered. All 41 coffee runs on the page except the 12 task videos carry it (17 primitive clips, 24 sweep clips); the 12 sweep clips that were \"not recorded yet\" (grind mass, hot water, steam time, tamp pressure) are now baked from their primitive sentences, rendered from three cameras and re-measured (14/16 neighbour pairs above the bar, grind mass measured on first-person end frames because the hand covers the dosing cup in the close-up). Known limit: three primitives (distribute, add, close) lean the body over a low target so the chest hides part of the action.",
+        "stats": [
+            "291 videos",
+            "50/50 tasks done",
+            "97 recorded runs",
+            "5 devices",
+            "17 primitives + 12 aliases",
+            "401 sentences"
+        ],
+        "tags": [
+            "3D",
+            "Blender",
+            "MuJoCo",
+            "action space",
+            "grounding",
+            "human-device",
+            "simulation"
+        ],
+        "demo": true
+    },
+    {
+        "slug": "cctv-decision-model",
+        "title": "CCTV decision model — typed anomaly decisions from frames (Laya-Vision levels 1–3 vs Qwen3.8-27B)",
+        "short_name": "CD",
+        "date": "2026-10-14",
+        "status": "in-progress",
+        "summary": "First pass at the mentor's decision-model proposal on the ETRI CCTV dataset: calibrated typed anomaly decisions (noul + choice) from frames with Laya-Vision (201M), zero-shot on single frames (Level 1) and 4-frame windows (Level 2), fine-tuned on the ETRI temporal ground truth (Level 3), against Qwen3.8-27B answering the same typed questions per frame. Two of five classes so far (abandoned_object, falling; 125 videos). Zero-shot Laya-Vision is at chance (frame AUC 0.51–0.59); 30 minutes of fine-tuning on one MIG slice brings the 1-frame model to AUC 0.73 on 41 test videos, level with Qwen3.8-27B (0.71 on its 12 videos) and ahead of it in event recall at a 1 % false-positive budget (39 % vs 25 %), at 150 ms per decision.",
+        "stats": [
+            "125 videos",
+            "4 runs",
+            "2 classes",
+            "12.9 h footage"
+        ],
+        "tags": [
+            "CCTV",
+            "anomaly detection",
+            "decision model",
+            "Laya-Vision",
+            "ETRI"
+        ]
+    }
 ]
