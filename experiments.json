@@ -50,12 +50,12 @@
         "slug": "cctv-decision-model",
         "title": "CCTV decision model — typed anomaly decisions from frames (Laya-Vision levels 1–3 vs Qwen3.8-27B)",
         "short_name": "CD",
-        "date": "2026-10-14",
+        "date": "2026-10-27",
         "status": "in-progress",
-        "summary": "First pass at the mentor's decision-model proposal on the ETRI CCTV dataset: calibrated typed anomaly decisions (noul + choice) from frames with Laya-Vision (201M), zero-shot on single frames (Level 1) and 4-frame windows (Level 2), fine-tuned on the ETRI temporal ground truth (Level 3), against Qwen3.8-27B answering the same typed questions per frame. Two of five classes so far (abandoned_object, falling; 125 videos). Zero-shot Laya-Vision is at chance (frame AUC 0.51–0.59); 30 minutes of fine-tuning on one MIG slice brings the 1-frame model to AUC 0.73 on 41 test videos, level with Qwen3.8-27B (0.71 on its 12 videos) and ahead of it in event recall at a 1 % false-positive budget (39 % vs 25 %), at 150 ms per decision.",
+        "summary": "Can a 201M visual decision model recognize CCTV events at lower compute cost? Single-frame, four-frame and fine-tuned Laya-Vision experiments, with a Qwen3.8-27B reference. Initial evidence: 125 videos, two event classes; calibration and temporal understanding remain open problems.",
         "stats": [
             "125 videos",
-            "4 runs",
+            "8 complete runs",
             "2 classes",
             "12.9 h footage"
         ],
