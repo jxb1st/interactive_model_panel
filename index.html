@@ -3,43 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Interactive Model Experiments — Jianxu</title>
-<meta name="description" content="A collection of experiments, visualizations, and qualitative studies for interactive and multimodal models.">
+<title>Interactive Model Experiments</title>
+<meta name="description" content="Experiments on models that watch video and respond in real time: setup, prompts, results and examples for each one.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="wrap">
-  <header class="page-header">
-    <a href="https://jxb1st.github.io/" class="back-link">← Back to home</a>
+<main class="page index">
+  <nav class="crumb"><a href="https://jxb1st.github.io/">Home</a></nav>
+
+  <header class="exp-header">
+    <aside class="note" id="experiment-count">Loading the list.</aside>
     <h1>Interactive Model Experiments</h1>
-    <p class="tagline">
-      A collection of experiments, visualizations, and qualitative studies for interactive and
-      multimodal models. Each entry opens a standalone page, hosted in its own repository, with the setup, prompts,
-      results, demos, and conclusions of one experiment.
-    </p>
-    <p class="panel-meta" id="experiment-count">Loading experiments…</p>
+    <p class="lead">Experiments on models that watch video and respond in real time. Each entry is one experiment on its own page: what was run, the exact prompts, the results, and a few examples.</p>
   </header>
 
-  <section class="grid" id="experiment-grid" aria-live="polite">
+  <ol class="entries" id="experiment-grid" aria-live="polite">
     <noscript>
-      <div class="error-state">
+      <li class="error-state">
         <strong>JavaScript is required</strong>
-        The experiment list is generated from <code>experiments.json</code> at load time.
-      </div>
+        The list is generated from <code>experiments.json</code> when the page loads.
+      </li>
     </noscript>
-  </section>
+  </ol>
 
-  <div class="empty-state" id="empty-state" hidden>
+  <p class="empty-state" id="empty-state" hidden>
     <strong>No experiments yet</strong>
-    Add an entry to <code>experiments.json</code> pointing at the experiment's own GitHub Pages site.
-    See <code>README.md</code> in this repository for the schema.
-  </div>
+    Add an entry to <code>experiments.json</code>; <code>README.md</code> lists the fields.
+  </p>
 
   <footer class="page-footer">
-    <span>Built with plain HTML, CSS, and a small script. Cards are generated from <code>experiments.json</code>.</span>
-    <span><a href="https://jxb1st.github.io/datasets/">Dataset Visualizations</a> · <a href="https://github.com/jxb1st">GitHub</a></span>
+    <a href="https://jxb1st.github.io/datasets/">Dataset viewers</a>
+    <a href="https://github.com/jxb1st">GitHub</a>
   </footer>
-</div>
+</main>
 <script src="script.js"></script>
 </body>
 </html>
