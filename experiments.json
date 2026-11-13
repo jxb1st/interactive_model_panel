@@ -66,26 +66,5 @@
             "Laya-Vision",
             "ETRI"
         ]
-    },
-    {
-        "slug": "pilot0",
-        "title": "Pilot 0: False-Trigger Composition of a Low-Threshold Proactive Trigger (Qwen3-VL-8B)",
-        "short_name": "P0",
-        "date": "2026-11-05",
-        "status": "in-progress",
-        "summary": "Qwen3-VL-8B-Instruct polled every 2 s as a \"should I speak now?\" trigger over a frozen 30% pilot split of three proactive-video benchmarks (InteractionBench, ProactiveVideoQA, StreamingBench; 505 items, 52,323 polls). Every candidate trigger is labeled against the ground-truth response windows at nine thresholds, and 100 false triggers are packaged for manual categorization. The trigger separates in-window from out-of-window moments only weakly (43% vs 15% of polls say \"Yes\"), the window hit rate reaches 76% at τ=0.1 at the cost of 6 positive polls per minute outside windows, and the spec's run-based candidate rule caps recall at 0.33 because long runs swallow later windows.",
-        "stats": [
-            "3 benchmarks",
-            "505 items",
-            "52,323 polls",
-            "100 reviewed false triggers"
-        ],
-        "tags": [
-            "video",
-            "streaming",
-            "proactive",
-            "false triggers",
-            "Qwen3-VL"
-        ]
     }
 ]
