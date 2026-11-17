@@ -72,7 +72,7 @@
         "title": "Closed-loop user simulation on the coffee machine: a Gemini user and a Gemini assistant in a tick-by-tick rollout",
         "date": "2026-11-17",
         "status": "completed",
-        "summary": "A simulated user (Gemini, with a persona) makes a latte on the coffee-machine simulator while an assistant (Gemini) watches two rendered views every 2.4 s and can only talk, two ticks late. Of three episodes, the novice persona completed the latte in 160 ticks and its forced skip of the tamp was prevented by the assistant's warning; the other two users poured 150 mL of milk where the latte asks for 120 and stopped at three of four sub-goals. In every episode the assistant misread the portafilter in the grinder cradle as locked into the group head. No judge scores this round.",
+        "summary": "A simulated user makes a latte on our coffee-machine simulator while an assistant watches two camera views and can only talk. Three runs, one per user persona. The novice user finished the latte, and the assistant's warning stopped it from skipping the tamp. The other two users poured 150 mL of milk where the recipe wants 120 and never finished. In all three runs the assistant mistook the portafilter in the grinder for one locked into the machine.",
         "stats": [
             "1 task",
             "3 personas",
