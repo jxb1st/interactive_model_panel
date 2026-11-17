@@ -234,8 +234,26 @@ pre.code { padding: 0.8rem 0.95rem; margin-bottom: 1.25rem; }
 .prompt.response { background: var(--accent-soft); }
 
 details.expand { margin: 0 0 1rem; }
-details.expand > summary { cursor: pointer; font-weight: 600; font-size: 0.9375rem; }
-details.expand > .expand-body { margin-top: 0.5rem; }
+details.expand > summary { cursor: pointer; font-weight: 600; font-size: 0.9375rem; list-style: none; }
+details.expand > summary::-webkit-details-marker { display: none; }
+details.expand > summary::before { content: "\25B8"; display: inline-block; width: 1em; color: var(--ink-3); }
+details.expand[open] > summary::before { content: "\25BE"; }
+details.expand > summary .n { font-weight: 400; color: var(--ink-2); }
+details.expand > .expand-body, details.expand > summary + * { margin-top: 0.6rem; }
+details.expand .prompt:last-child { margin-bottom: 0.25rem; }
+
+/* Collapsed pipeline figure (Construction and Pipeline sections): the summary is the figure's caption,
+   "Figure N. What it shows"; the drawing, its margin note and its description open on click. */
+details.figure { border-top: 1px solid var(--rule); padding: 0.6rem 0; margin: 0; }
+details.figure:last-of-type { border-bottom: 1px solid var(--rule); margin-bottom: 1.25rem; }
+details.figure > summary { cursor: pointer; list-style: none; font-size: 0.9375rem; font-weight: 600; }
+details.figure > summary::-webkit-details-marker { display: none; }
+details.figure > summary::before { content: "\25B8"; display: inline-block; width: 1em; color: var(--ink-3); }
+details.figure[open] > summary::before { content: "\25BE"; }
+details.figure > summary .n { font-weight: 400; color: var(--ink-2); }
+details.figure > figure.fig { margin: 0.9rem 0 1rem; }
+details.figure > p { max-width: var(--measure); }
+details.figure > p:last-child { margin-bottom: 0.4rem; }
 
 /* ---------- tables ---------- */
 

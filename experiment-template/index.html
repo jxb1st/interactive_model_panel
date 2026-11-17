@@ -36,12 +36,15 @@
 
   <section class="exp-section">
     <h2 id="pipeline">Pipeline</h2>
-    <aside class="note">Drawn from run.py and config.yaml.</aside>
-    <figure class="fig wide">
-      <!-- paste the <svg> element of experiments/<slug>/figures/fig1-overview.svg here -->
-      <figcaption><strong>What to look at.</strong> Then what the parts are.</figcaption>
-    </figure>
-    <p>Walk the running example through the figure in order, and name the one design point a reader would otherwise miss.</p>
+    <!-- One details.figure per figure, collapsed by default; the summary is the caption. Repeat for fig2, fig3, ... -->
+    <details class="figure">
+      <summary>Figure 1. What the figure shows, in at most 12 words</summary>
+      <aside class="note">Drawn from run.py and config.yaml.</aside>
+      <figure class="fig wide">
+        <!-- paste the <svg> element of experiments/<slug>/figures/fig1-overview.svg here -->
+      </figure>
+      <p>Walk the running example through the figure in order, and name the one design point a reader would otherwise miss.</p>
+    </details>
   </section>
 
   <section class="exp-section">
@@ -60,10 +63,14 @@
 
   <section class="exp-section">
     <h2 id="prompts">Prompts</h2>
-    <details class="prompt system"><summary>System prompt</summary><pre></pre></details>
-    <details class="prompt user"><summary>User prompt</summary><pre></pre></details>
-    <details class="prompt variant"><summary>Variant <span class="prompt-note">what changed</span></summary><pre></pre></details>
-    <details class="prompt response" open><summary>Model response</summary><pre></pre></details>
+    <!-- The whole list is collapsed by default; the summary carries the count. Each prompt is collapsed too. -->
+    <details class="expand">
+      <summary>Prompts <span class="n">(4)</span></summary>
+      <details class="prompt system"><summary>System prompt</summary><pre></pre></details>
+      <details class="prompt user"><summary>User prompt</summary><pre></pre></details>
+      <details class="prompt variant"><summary>Variant <span class="prompt-note">what changed</span></summary><pre></pre></details>
+      <details class="prompt response"><summary>Model response</summary><pre></pre></details>
+    </details>
   </section>
 
   <section class="exp-section">
