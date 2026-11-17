@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Experiment page template. Copy this folder (index.html, style.css, assets/) into a new repository
-     named after the experiment. Fill in the header, keep only the sections that have real content
-     (Setup, Prompts, Results, Examples; each optional), delete everything else, and enable GitHub
+     named after the experiment. Fill in the header, Motivation, Pipeline and Settings; keep Prompts,
+     Results and Examples only when they have real content; delete everything else; enable GitHub
      Pages. Then add the experiment to experiments.json in interactive_model_panel so it appears on
      the index. A margin note (aside.note) goes right BEFORE the element it qualifies. -->
 <title>EXPERIMENT TITLE</title>
@@ -30,16 +30,32 @@
   </header>
 
   <section class="exp-section">
-    <h2 id="setup">Setup</h2>
-    <aside class="note">Qualifications go in the margin: split size, seed, a deviation from the official protocol.</aside>
+    <h2 id="motivation">Motivation</h2>
+    <p>Why this experiment exists: what we did not know, which decision or claim it feeds, and what a result either way changes. One or two short paragraphs.</p>
+  </section>
+
+  <section class="exp-section">
+    <h2 id="pipeline">Pipeline</h2>
+    <aside class="note">Drawn from run.py and config.yaml.</aside>
+    <figure class="fig wide">
+      <!-- paste the <svg> element of experiments/<slug>/figures/fig1-overview.svg here -->
+      <figcaption><strong>What to look at.</strong> Then what the parts are.</figcaption>
+    </figure>
+    <p>Walk the running example through the figure in order, and name the one design point a reader would otherwise miss.</p>
+  </section>
+
+  <section class="exp-section">
+    <h2 id="settings">Settings</h2>
+    <aside class="note">Deviations from the official protocol go in the margin, next to the row they qualify.</aside>
     <dl class="facts">
-      <dt>Question</dt><dd>What this experiment decides.</dd>
       <dt>Model</dt><dd></dd>
       <dt>Data</dt><dd></dd>
       <dt>Protocol</dt><dd></dd>
-      <dt>Settings</dt><dd></dd>
+      <dt>Frames</dt><dd></dd>
+      <dt>Decoding</dt><dd></dd>
+      <dt>Hardware</dt><dd></dd>
+      <dt>Code</dt><dd></dd>
     </dl>
-    <p>Only what a reader needs to interpret the results.</p>
   </section>
 
   <section class="exp-section">

@@ -12,7 +12,8 @@ limit. This repository holds only the index and the page template.
 ```text
 interactive_model_panel/
 ├── index.html                 # the index: one entry per experiment in experiments.json
-├── style.css                  # the stylesheet, shared with every experiment page
+├── style.css                  # the stylesheet, shared with every experiment page and the collection sites
+├── collection.css             # components of the collection sites (benchmark-collection, training-data-collection)
 ├── script.js                  # loads, sorts and renders the manifest
 ├── experiments.json           # the manifest (edit this to add an experiment)
 ├── assets/                    # index-level assets
@@ -29,8 +30,9 @@ One serif family (Source Serif 4, loaded from Google Fonts, Georgia as fallback)
 single accent (#4b2e83), and a right-hand margin column. The margin holds dates, status and
 qualifications (denominators, whether a metric is official, a deviation from the protocol); the main
 column holds the finding, the setup, the exact prompts, the results and a few examples. An experiment
-page has four optional sections, Setup, Prompts, Results and Examples, and nothing else. Every page
-opens with one paragraph, the finding, which is also the entry text on the index.
+page has the sections Motivation, Pipeline and Settings, and Prompts, Results and Examples when the
+experiment has them, and nothing else. Every page opens with one paragraph, the finding, which is
+also the entry text on the index. The design notes live in the project's `publish-panel` skill.
 
 ## `experiments.json` schema
 

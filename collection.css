@@ -1,0 +1,105 @@
+/* Components of the collection page, on top of the shared style.css. */
+
+.contents { columns: 2; column-gap: 2rem; padding-left: 1.2rem; margin: 1.5rem 0 0; font-size: 0.9375rem; }
+.contents li { break-inside: avoid; }
+@media (max-width: 40rem) { .contents { columns: 1; } }
+
+.exp-section > h3 { margin-top: 2rem; }
+
+/* key: value lists inside a sample */
+dl.kv { display: grid; grid-template-columns: max-content minmax(0, 1fr); column-gap: 0.9rem; row-gap: 0.25rem; margin: 0 0 0.6rem; font-size: 0.9375rem; }
+dl.kv dt { color: var(--ink-2); }
+dl.kv dd { margin: 0; overflow-wrap: anywhere; }
+dl.kv ul { margin: 0; padding-left: 1.1rem; }
+
+/* answer options; the correct one is marked */
+ol.opts { list-style: none; padding: 0; margin: 0.1rem 0 0.7rem; font-size: 0.9375rem; }
+ol.opts li { padding: 0.1rem 0 0.1rem 0.6rem; border-left: 2px solid transparent; }
+ol.opts li.ans { border-left-color: var(--accent); font-weight: 600; }
+ol.opts li.ans::after { content: " correct"; font-weight: 400; color: var(--accent); font-size: 0.875rem; }
+
+/* timed sequences (sequential QA, proactive counts, chapters) */
+ol.seq { list-style: none; padding: 0; margin: 0.2rem 0 0.6rem; font-size: 0.9375rem; }
+ol.seq li { display: grid; grid-template-columns: 4.2rem minmax(0, 1fr); column-gap: 0.6rem; padding: 0.12rem 0; border-top: 1px solid var(--rule); }
+ol.seq li:first-child { border-top: 0; }
+ol.seq .t { color: var(--ink-2); font-variant-numeric: tabular-nums; }
+ol.seq .a { color: var(--accent); }
+dl.kv ol.seq { margin: 0; }
+
+/* conversation turns (LLaVA-Video) */
+.conv { font-size: 0.9375rem; }
+.turn { margin: 0 0 0.5rem; padding-left: 0.75rem; border-left: 2px solid var(--rule); }
+.turn.gpt { border-left-color: var(--accent); }
+.turn > span { display: block; font-size: 0.8125rem; color: var(--ink-2); }
+
+/* one example: video on the left, the request and its correct answer on the right */
+.samples { display: grid; gap: 1.75rem; margin: 0.5rem 0 1rem; }
+.sample { display: grid; grid-template-columns: 22rem minmax(0, 1fr); gap: 1rem 2rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); }
+.sample h4 { font-size: 1.0625rem; font-weight: 600; margin: 0 0 0.15rem; }
+.s-body { font-size: 1rem; line-height: 1.5; }
+.s-meta { font-size: 0.8125rem; color: var(--ink-3); margin: 0 0 0.55rem; }
+.when { display: block; font-size: 0.8125rem; color: var(--ink-2); margin-bottom: 0.1rem; }
+.ask { margin: 0 0 0.7rem; }
+.ans-line { margin: 0.2rem 0 0.7rem; padding-left: 0.6rem; border-left: 2px solid var(--accent); font-weight: 600; }
+.ans-line .when { font-weight: 400; }
+table.answers { border-collapse: collapse; width: 100%; margin: 0.2rem 0 0.8rem; font-size: 0.9375rem; }
+table.answers caption { caption-side: top; text-align: left; font-size: 0.8125rem; color: var(--ink-2); padding: 0 0 0.25rem; }
+table.answers th { text-align: left; font-weight: 400; font-size: 0.8125rem; color: var(--ink-3); padding: 0 0.75rem 0.15rem 0; border-bottom: 1px solid var(--ink-3); }
+table.answers td { padding: 0.2rem 0.75rem 0.2rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+table.answers th:first-child { white-space: nowrap; width: 1%; }
+table.answers td.t { white-space: nowrap; font-variant-numeric: tabular-nums; color: var(--ink-2); width: 1%; }
+table.answers .a { color: var(--accent); font-weight: 600; }
+.s-facts { font-size: 0.875rem; color: var(--ink-2); margin: 0 0 0.5rem; }
+.opts-cap { font-size: 0.8125rem; color: var(--ink-2); margin: 0.5rem 0 0; }
+.turn-a { color: var(--ink-2); }
+ul.points { margin: 0.1rem 0 0.6rem; padding-left: 1.2rem; font-size: 0.9375rem; }
+.s-media video, .s-media img { display: block; width: 100%; height: auto; background: var(--field); }
+.s-media video { max-height: 24rem; }   /* portrait videos stay compact; the player letterboxes */
+.s-media img.strip { margin-bottom: 0.5rem; }
+.mediacap { font-size: 0.8125rem; color: var(--ink-2); margin: 0.45rem 0 0; line-height: 1.45; }
+.nomedia { aspect-ratio: 16 / 9; display: flex; align-items: center; justify-content: center; padding: 1rem; text-align: center; background: var(--field); color: var(--ink-2); font-size: 0.875rem; }
+@media (max-width: 48rem) { .sample { grid-template-columns: 1fr; } }
+
+@media (min-width: 62rem) { .samples { width: calc(100% + var(--margin) + var(--gap)); } }
+
+/* per-dataset pages: task contents with counts, grouped example sections, quoted examples */
+.contents .n { color: var(--ink-3); font-size: 0.8125rem; margin-left: 0.3rem; }
+.group h3 { font-size: 1.1875rem; margin: 2.5rem 0 0.25rem; padding-top: 1rem; border-top: 1px solid var(--ink); }
+.group .samples { margin-top: 0; }
+.group .sample:first-child { border-top: 0; }
+ul.quotes { margin: 0 0 1.25rem; padding-left: 1.2rem; }
+ul.quotes li { margin: 0.2rem 0; color: var(--accent); }
+.exp-header .note a { color: var(--ink-2); }
+
+/* compact task statistics: several per row instead of a table row each */
+ul.taskgrid { list-style: none; padding: 0; margin: 0.5rem 0 1.25rem; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.5rem 1.25rem; font-size: 0.9375rem; }
+ul.taskgrid li { border-top: 1px solid var(--rule); padding-top: 0.3rem; display: flex; flex-wrap: wrap; column-gap: 0.5rem; align-items: baseline; }
+ul.taskgrid .tg-name { flex: 1 1 auto; }
+ul.taskgrid .tg-n { color: var(--ink-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
+ul.taskgrid .tg-sub { flex-basis: 100%; font-size: 0.8125rem; color: var(--ink-3); }
+@media (max-width: 48rem) { ul.taskgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 30rem) { ul.taskgrid { grid-template-columns: 1fr; } }
+@media (min-width: 62rem) { ul.taskgrid { width: calc(100% + var(--margin) + var(--gap)); } }
+
+/* what a task group asks and tests, under its heading */
+.group-desc { max-width: var(--measure); margin: 0.4rem 0 1rem; font-size: 1rem; color: var(--ink-2); }
+.group-note { max-width: var(--measure); font-size: 0.9375rem; color: var(--ink-2); margin: 1rem 0 0; }
+ul.statlines { margin: 0 0 0.75rem; padding-left: 1.2rem; max-width: var(--measure); }
+.stat-label { font-size: 0.8125rem; color: var(--ink-2); margin: 1.25rem 0 0; }
+.stat-label + ul.taskgrid { margin-top: 0.3rem; }
+ul.statlines li { margin: 0.25rem 0; }
+
+/* overview table grouped by category */
+table.grouped tr.group th { text-align: left; font-weight: 600; padding-top: 1.4rem; padding-bottom: 0.3rem; border-bottom: 1px solid var(--ink-3); }
+table.grouped tr.group:first-child th { padding-top: 0.6rem; }
+table.grouped tr.group th span { font-weight: 400; color: var(--ink-2); }
+
+/* evaluation metrics: name, then how it is computed */
+dl.metrics { display: grid; grid-template-columns: minmax(10rem, max-content) minmax(0, 1fr); column-gap: 1.25rem; row-gap: 0.45rem; margin: 0 0 1rem; font-size: 0.9375rem; }
+dl.metrics dt { font-weight: 600; }
+dl.metrics dd { margin: 0; }
+@media (max-width: 40rem) { dl.metrics { grid-template-columns: 1fr; row-gap: 0.15rem; } dl.metrics dd { margin-bottom: 0.5rem; } }
+@media (min-width: 62rem) { dl.metrics { width: calc(100% + var(--margin) + var(--gap)); } }
+.formula { margin: 0.3rem 0 0.2rem; overflow-x: auto; }
+.formula .katex-display { margin: 0.2rem 0; text-align: left; }
+.formula .katex-display > .katex { text-align: left; font-size: 1.02em; }
