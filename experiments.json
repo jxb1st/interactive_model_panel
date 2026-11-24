@@ -93,13 +93,13 @@
   "title": "Software-use simulation, first software Blender: a user's sentences become steps on the real window, one frame per tick",
   "date": "2026-11-23",
   "status": "completed",
-  "summary": "The digital counterpart of our device simulation. A user's sentence from a listed vocabulary becomes a short program of steps on the real Blender window running under a virtual display: the cursor travels, a menu pops open, an operator runs. Every 1.2-second tick the window is captured as one frame and the scene is read back as a graph, so sub-goals are re-checked every tick instead of latched. Four donut tasks from a public coaching dataset run end to end with stand-in agents (4 of 4 complete every sub-goal); one clip per action shows the vocabulary. No model is in the loop yet: the user and assistant interfaces are built and exercised by stand-ins, and the next step connects the two agents.",
+  "summary": "The digital counterpart of our device simulation. A user's sentence from a listed vocabulary becomes a short program of steps on the real Blender window running under a virtual display: the cursor travels, a menu pops open, an operator runs. Every 1.2-second tick the window is captured as one frame and the scene is read back as a graph, so sub-goals are re-checked every tick instead of latched. Four donut tasks from a public coaching dataset run end to end with stand-in agents (4 of 4 complete every sub-goal); one clip per action shows the vocabulary. Then the two agents go in: a simulated user that speaks and acts from a persona card and an assistant that watches the window and can only talk, with a hidden mistake forced on the user in every run. 8 of 12 runs finish with every sub-goal; the assistant never caught the forced mistake before it was committed (the window shows nothing until the wrong value is set), but it named it afterwards in 11 runs, and the user then recovered in 8 of those.",
   "stats": [
    "1 software",
    "40 actions",
    "4 tasks",
-   "16 mistakes",
-   "0 models"
+   "12 episodes",
+   "8 won"
   ],
   "tags": [
    "software use",
